@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MarvelQuizActivity">
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="191dp"
+        android:layout_height="68dp"
+        android:text="Which super hero can use and produce webs"
+        app:layout_constraintBottom_toTopOf="@+id/mRadioGroup"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/msubmit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SUBMIT"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mRadioGroup" />
+
+    <RadioGroup
+        android:id="@+id/mRadioGroup"
+        android:layout_width="227dp"
+        android:layout_height="221dp"
+        app:layout_constraintBottom_toTopOf="@+id/msubmit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6">
+
+        <RadioButton
+            android:id="@+id/radioButton14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Super Man" />
+
+        <RadioButton
+            android:id="@+id/radioButton13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Spider Man" />
+
+        <RadioButton
+            android:id="@+id/radioButton15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Iron Man" />
+
+        <RadioButton
+            android:id="@+id/radioButton16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Captain America" />
+    </RadioGroup>
+</android.support.constraint.ConstraintLayout>

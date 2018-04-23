@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PhysicsOverviewActivity">
+
+    <TextView
+        android:id="@+id/pDesc"
+        android:layout_width="192dp"
+        android:layout_height="59dp"
+        android:text="This will be a quiz to test basic PHYSICS knowledge"
+        app:layout_constraintBottom_toTopOf="@+id/pQuestion"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/pQuestion"
+        android:layout_width="130dp"
+        android:layout_height="62dp"
+        android:text="There will be 2 questions for this topic"
+        app:layout_constraintBottom_toTopOf="@+id/pbutton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pDesc" />
+
+    <Button
+        android:id="@+id/pbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BEGIN"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pQuestion" />
+
+</android.support.constraint.ConstraintLayout>

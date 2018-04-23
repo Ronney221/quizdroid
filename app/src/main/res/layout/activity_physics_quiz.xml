@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PhysicsQuizActivity">
+
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="179dp"
+        android:layout_height="77dp"
+        android:text="WHICH LAW OF PHYSICS MAKES A PERPETUAL MOTION MACHINE IMPOSSIBLE?"
+        app:layout_constraintBottom_toTopOf="@+id/pRadioGroup"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/pRadioGroup"
+        android:layout_width="253dp"
+        android:layout_height="237dp"
+        app:layout_constraintBottom_toTopOf="@+id/pFinish"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5">
+
+        <RadioButton
+            android:id="@+id/radioButton5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="First law of thermodynamics" />
+
+        <RadioButton
+            android:id="@+id/radioButton10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Second law of thermodynamics" />
+
+        <RadioButton
+            android:id="@+id/radioButton11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Third law of thermodynamics" />
+
+        <RadioButton
+            android:id="@+id/radioButton12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="First and second laws of thermodynamics" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/pFinish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="FINISH"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pRadioGroup" />
+</android.support.constraint.ConstraintLayout>
