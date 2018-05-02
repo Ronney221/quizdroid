@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title_activity_marvel_answer">MarvelAnswerActivity</string>
+
+    <string name="MathDesc">This will be a quiz to test basic MATHEMATICAL knowledge</string>
+
+    <string name="MathQ1">What is 4 * 5?</string>
+    <string name="MathQ1A1">1</string>
+    <string name="MathQ1A2">5</string>
+    <string name="MathQ1A3">20</string>
+    <string name="MathQ1A4">hello</string>
+    <string name="MathQ1A">20</string>
+
+    <string name="MathQ2">What is the derivative of x^2 ?</string>
+    <string name="MathQ2A1">2</string>
+    <string name="MathQ2A2">3x^3</string>
+    <string name="MathQ2A3">2x</string>
+    <string name="MathQ2A4">x^2</string>
+    <string name="MathQ2A">2x</string>
+
+    <string name="physicDesc">This will be a quiz to test basic PHYSICS knowledge</string>
+    <string name="physicQ1">WHICH LAW OF PHYSICS MAKES A PERPETUAL MOTION MACHINE IMPOSSIBLE?</string>
+    <string name="physicQ1A1">First law of thermodynamics</string>
+    <string name="physicQ1A2">Second law of thermodynamics</string>
+    <string name="physicQ1A3">Third law of thermodynamics</string>
+    <string name="physicQ1A4">First and second laws of thermodynamics</string>
+    <string name="physicQ1A">First and second laws of thermodynamics</string>
+
+    <string name="physicQ2">IF AN OBJECT IS IN MOTION, WHAT KIND OF ENERGY DOES IT POSSESS?</string>
+    <string name="physicQ2A1">Metabolic Energy</string>
+    <string name="physicQ2A2">Caloric Energy</string>
+    <string name="physicQ2A3">Kinetic Energy</string>
+    <string name="physicQ2A4">Potential Energy</string>
+    <string name="physicQ2A">Kinetic Energy</string>
+
+    <string name="marvelDesc">This will be a quiz to test basic MARVEL knowledge</string>
+    <string name="marvelQ1">Which super hero can use and produce webs</string>
+    <string name="marvelQ1A1">Super Man</string>
+    <string name="marvelQ1A2">Spider Man</string>
+    <string name="marvelQ1A3">Iron Man</string>
+    <string name="marvelQ1A4">Captain America</string>
+    <string name="marvelQ1A">Spider Man</string>
+
+    <string name="marvelQ2">Which super hero carries around a shield?</string>
+    <string name="marvelQ2A1">Super Man</string>
+    <string name="marvelQ2A2">Spider Man</string>
+    <string name="marvelQ2A3">Iron Man</string>
+    <string name="marvelQ2A4">Captain America</string>
+    <string name="marvelQ2A">Captain America</string>
+</resources>
