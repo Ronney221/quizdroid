@@ -12,14 +12,19 @@ class QuizActivity : AppCompatActivity() {
         setContentView(R.layout.activity_quiz_fragment)
 
         var topic = intent.extras.getString("topic")
+        var descriptionText : String = ""
 
-        if (topic == "Physics") {
+        if (topic == "Math") {
+            descriptionText = QuizApp.math.longDesc
+        } else if (topic == "Physics") {
             topic = "physic"
+            descriptionText = QuizApp.physics.longDesc
         } else if (topic == "Marvel Super Heroes") {
             topic = "marvel"
+            descriptionText = QuizApp.marvel.longDesc
         }
 
-        val descriptionText =  getString(resources.getIdentifier(topic+"Desc", "string", packageName))
+        //val descriptionText =  getString(resources.getIdentifier(topic+"Desc", "string", packageName))
 
         //start of fragments
         val transaction = fragmentManager.beginTransaction()

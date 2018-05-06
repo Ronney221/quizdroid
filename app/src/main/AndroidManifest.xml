@@ -23,7 +23,9 @@
         <activity android:name=".OverviewFragment" />
         <activity android:name=".testfrag" />
         <activity android:name=".QuestionFragment" />
-        <activity android:name=".AnswerFragment"></activity>
+        <activity android:name=".AnswerFragment" />
+        <activity android:name=".QuizApp" />
+        <activity android:name=".TopicRepository"></activity>
     </application>
 
 </manifest>

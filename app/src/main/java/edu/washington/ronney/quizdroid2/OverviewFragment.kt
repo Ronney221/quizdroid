@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import java.io.Serializable
 
 class OverviewFragment : Fragment() {
 
@@ -25,7 +26,6 @@ class OverviewFragment : Fragment() {
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.activity_overview, container, false) as View
-
         val beginButton = view.findViewById<View>(R.id.overviewButton)
         val description : TextView = view.findViewById(R.id.overviewDesc)
 

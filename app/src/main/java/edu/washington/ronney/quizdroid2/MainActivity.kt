@@ -16,12 +16,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
-
         val listView: ListView = findViewById(R.id.listView)
 
         val adapter = ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1, android.R.id.text1, names)
+
+        //trigger the on create log
+        QuizApp.quiz
 
         listView.adapter = adapter
 

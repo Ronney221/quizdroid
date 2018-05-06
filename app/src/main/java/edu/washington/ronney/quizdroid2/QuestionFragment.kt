@@ -44,26 +44,28 @@ class QuestionFragment : Fragment() {
         //index 0 = question    ------ + 6 per question iteration
         //index 1 2 3 4 = options
         //index 5 = correct answer
+
         if (topic.equals("Math")) {
-            questions = arrayOf("What is 4 * 5?", "1", "5", "20", "hello", "20",
-                    "What is the derivative of x^2?", "2", "3x^3", "2x" ,"x^2", "2x")
+           val math = QuizApp.math.questions[questionNumber -1]
+            questions = arrayOf(math.question, math.a1, math.a2, math.a3, math.a4, math.correct)
+
         } else if (topic == "physic"){
-            questions = arrayOf("WHICH LAW OF PHYSICS MAKES A PERPETUAL MOTION MACHINE IMPOSSIBLE?", "First law of thermodynamics", "Second law of thermodynamics", "Third law of thermodynamics", "First and second laws of thermodynamics", "First and second laws of thermodynamics",
-                    "IF AN OBJECT IS IN MOTION, WHAT KIND OF ENERGY DOES IT POSSESS?", "Metabolic Energy", "Caloric Energy", "Kinetic Energy", "Potential Energy", "Kinetic Energy")
+            val physic = QuizApp.physics.questions[questionNumber -1]
+            questions = arrayOf(physic.question, physic.a1, physic.a2, physic.a3, physic.a4, physic.correct)
         } else if (topic == "marvel") {
-            questions = arrayOf("Which super hero can use and produce webs", "Super Man", "Spider Man", "Iron Man", "Captain American", "Spider Man",
-                    "Which super hero carries around a shield?", "Super Man", "Spider Man", "Iron Man", "Captain American", "Captain America")
+            val marvel = QuizApp.marvel.questions[questionNumber -1]
+            questions = arrayOf(marvel.question, marvel.a1, marvel.a2, marvel.a3, marvel.a4, marvel.correct)
         }
 
 
-        question.text = questions[0 + ((questionNumber - 1) * 6)]
+        question.text = questions[0]
 
-        answer1.text = questions[1 + ((questionNumber - 1) * 6)]
-        answer2.text = questions[2 + ((questionNumber - 1) * 6)]
-        answer3.text = questions[3 + ((questionNumber - 1) * 6)]
-        answer4.text = questions[4 + ((questionNumber - 1) * 6)]
+        answer1.text = questions[1]
+        answer2.text = questions[2]
+        answer3.text = questions[3]
+        answer4.text = questions[4]
 
-        val correctAnswer = questions[5 + ((questionNumber - 1) * 6)]
+        val correctAnswer = questions[5]
 
         button.text = "Submit"
 
