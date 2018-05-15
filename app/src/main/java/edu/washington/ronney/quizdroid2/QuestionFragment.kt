@@ -17,6 +17,7 @@ class QuestionFragment : Fragment() {
     var questionNumber = 0
     var questionsCorrect = 0
     var answer = ""
+    var topics : TopicRepository.Topic = TopicRepository.Topic("", "", "", ArrayList<TopicRepository.Quiz>())
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,6 +25,7 @@ class QuestionFragment : Fragment() {
             topic = arguments.getString("topic")
             questionNumber = arguments.getInt("questionNumber")
             questionsCorrect = arguments.getInt("questionsCorrect")
+            topics = arguments.getSerializable("topics") as TopicRepository.Topic
         }
     }
 
@@ -40,32 +42,27 @@ class QuestionFragment : Fragment() {
         val answer3 = view.findViewById<RadioButton>(R.id.radioButton3)
         val answer4 = view.findViewById<RadioButton>(R.id.radioButton4)
 
-        var questions : Array<String> = arrayOf("", "", "", "", "", "", "", "", "", "", "", "")
+        var questions : ArrayList<String> = ArrayList<String>()
         //index 0 = question    ------ + 6 per question iteration
         //index 1 2 3 4 = options
         //index 5 = correct answer
 
-        if (topic.equals("Math")) {
-           val math = QuizApp.math.questions[questionNumber -1]
-            questions = arrayOf(math.question, math.a1, math.a2, math.a3, math.a4, math.correct)
-
-        } else if (topic == "physic"){
-            val physic = QuizApp.physics.questions[questionNumber -1]
-            questions = arrayOf(physic.question, physic.a1, physic.a2, physic.a3, physic.a4, physic.correct)
-        } else if (topic == "marvel") {
-            val marvel = QuizApp.marvel.questions[questionNumber -1]
-            questions = arrayOf(marvel.question, marvel.a1, marvel.a2, marvel.a3, marvel.a4, marvel.correct)
-        }
+        questions.add(topics.questions.get(questionNumber - 1).question)
+        questions.add(topics.questions.get(questionNumber - 1).a1)
+        questions.add(topics.questions.get(questionNumber - 1).a2)
+        questions.add(topics.questions.get(questionNumber - 1).a3)
+        questions.add(topics.questions.get(questionNumber - 1).a4)
+        questions.add(topics.questions.get(questionNumber - 1).correct)
 
 
-        question.text = questions[0]
+        question.text = questions.get(0)
 
-        answer1.text = questions[1]
-        answer2.text = questions[2]
-        answer3.text = questions[3]
-        answer4.text = questions[4]
+        answer1.text = questions.get(1)
+        answer2.text = questions.get(2)
+        answer3.text = questions.get(3)
+        answer4.text = questions.get(4)
 
-        val correctAnswer = questions[5]
+        val correctAnswer = questions.get(5)
 
         button.text = "Submit"
 
@@ -90,6 +87,7 @@ class QuestionFragment : Fragment() {
             instance.putInt("questionsCorrect", questionsCorrect)
             instance.putString("answer", answer)
             instance.putString("correctAnswer", correctAnswer)
+            instance.putSerializable("topics", topics)
 
             answerFragment.arguments = instance
            // transaction.setCustomAnimations(R.animator.enter_from_right, R.animator.exit_to_left)

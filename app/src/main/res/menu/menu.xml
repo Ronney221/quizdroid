@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_setting"
+        android:title="Change JSON input URL"
+        app:showAsAction="never">
+    </item>
+
+    <item
+        android:id="@+id/action_setting2"
+        android:title="Check for new downloads (minutes)"
+        app:showAsAction="never">
+    </item>
+
+</menu>

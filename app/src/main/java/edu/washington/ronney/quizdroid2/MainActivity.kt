@@ -3,13 +3,14 @@ package edu.washington.ronney.quizdroid2
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.ListView
 
 class MainActivity : AppCompatActivity() {
 
-    val names = arrayOf("Math", "Physics", "Marvel Super Heroes")
+    val names = arrayOf("Science!", "Marvel Super Heroes", "Mathematics")
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,5 +38,9 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        val inflator = menuInflater
+        inflator.inflate(R.menu.menu, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
 }

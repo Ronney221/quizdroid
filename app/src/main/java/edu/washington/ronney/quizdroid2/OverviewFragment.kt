@@ -13,12 +13,14 @@ class OverviewFragment : Fragment() {
 
     var topic : String = ""
     var desc : String = ""
+    var topics : TopicRepository.Topic = TopicRepository.Topic("", "", "", ArrayList<TopicRepository.Quiz>())
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         if (arguments != null) {
             topic = arguments.getString("topic")
             desc = arguments.getString("descriptionText")
+            topics = arguments.getSerializable("topics") as TopicRepository.Topic
         }
     }
 
@@ -28,8 +30,10 @@ class OverviewFragment : Fragment() {
         val view = inflater.inflate(R.layout.activity_overview, container, false) as View
         val beginButton = view.findViewById<View>(R.id.overviewButton)
         val description : TextView = view.findViewById(R.id.overviewDesc)
+        val overviewNumber : TextView = view.findViewById(R.id.overviewNumber)
 
         description.text = desc
+        overviewNumber.text = "there will be " + topics.questions.size +" questions for this topic"
 
         beginButton.setOnClickListener {
 
@@ -40,6 +44,7 @@ class OverviewFragment : Fragment() {
             instance.putString("topic", topic)
             instance.putInt("questionNumber", 1)
             instance.putInt("questionsCorrect", 0)
+            instance.putSerializable("topics", topics)
 
             frag.arguments = instance
             transaction.replace(R.id.fragment, frag).commit()

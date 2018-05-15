@@ -20,6 +20,7 @@
         android:id="@+id/overviewNumber"
         android:layout_width="130dp"
         android:layout_height="62dp"
+        android:layout_marginBottom="2dp"
         android:text="There will be 2 questions for this topic"
         app:layout_constraintBottom_toTopOf="@+id/overviewButton"
         app:layout_constraintEnd_toEndOf="parent"

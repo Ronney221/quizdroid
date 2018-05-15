@@ -15,6 +15,7 @@ class AnswerFragment : Fragment() {
     var questionNumber = 0
     var questionsCorrect = 0
     var topic = ""
+    var topics : TopicRepository.Topic = TopicRepository.Topic("", "", "", ArrayList<TopicRepository.Quiz>())
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,6 +25,7 @@ class AnswerFragment : Fragment() {
             questionNumber = arguments.getInt("questionNumber")
             questionsCorrect = arguments.getInt("questionsCorrect")
             topic = arguments.getString("topic");
+            topics = arguments.getSerializable("topics") as TopicRepository.Topic
         }
     }
 
@@ -48,7 +50,7 @@ class AnswerFragment : Fragment() {
         runningTotal.text = "You have " + questionsCorrect +" out of " + questionNumber +" correct"
 
         //changing button
-        if (questionNumber == 2) { //last question
+        if (questionNumber == topics.questions.size) { //last question
             button.setText("FINISH")
         } else {
             button.setText("NEXT")
@@ -56,7 +58,7 @@ class AnswerFragment : Fragment() {
 
         button.setOnClickListener {
 
-            if (questionNumber == 2) {
+            if (questionNumber == topics.questions.size) {
                 (activity as QuizActivity).finished()
             } else {
                 val transaction = fragmentManager.beginTransaction()
@@ -69,6 +71,7 @@ class AnswerFragment : Fragment() {
                 instance.putInt("questionsCorrect", questionsCorrect)
                 instance.putString("answer", answer)
                 instance.putString("correctAnswer", correctAnswer)
+                instance.putSerializable("topics", topics)
 
                 frag.arguments = instance
                 transaction.replace(R.id.fragment, frag).commit()
